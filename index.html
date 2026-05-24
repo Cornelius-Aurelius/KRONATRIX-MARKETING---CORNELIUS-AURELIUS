@@ -136,6 +136,27 @@
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
   z-index: 200;
+  max-height: min(78vh, 720px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+}
+.menu-panel::-webkit-scrollbar {
+  width: 10px;
+}
+.menu-panel::-webkit-scrollbar-track {
+  background: rgba(255,255,255,.035);
+  border-radius: 999px;
+}
+.menu-panel::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--blue2), var(--blue3));
+  border-radius: 999px;
+  border: 2px solid rgba(1,4,10,.98);
+}
+.menu-panel::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffffff, var(--blue2));
 }
 .menu-group {
   display: grid;
@@ -320,7 +341,8 @@
     right: 0;
     width: min(94vw, 390px);
     max-height: calc(100vh - 92px);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .simplified-hero {
     padding-top: 36px;
